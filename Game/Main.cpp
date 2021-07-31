@@ -1,0 +1,11 @@
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+#include <string> //∑©≈∑ Ω√Ω∫≈€
+
+using namespace std;
+
+int main()
+{
+
+}
