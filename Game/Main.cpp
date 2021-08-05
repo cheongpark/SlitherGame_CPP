@@ -20,6 +20,7 @@ void textcolor(int foreground);
 
 int main()
 {
+	int now[2][2] = { {gwx / 2,gwy / 2},{gwx / 2,gwy / 2} };
 	GameWall();
 	int key;
 	while (1)
@@ -30,21 +31,26 @@ int main()
 			switch (key)
 			{
 			case UP:
-				cout << "UP" << endl;
+				now[1][1] -= 1;
 				break;
 			case DOWN:
-				cout << "DOWN" << endl;
+				now[1][1] += 1;
 				break;
 			case LEFT:
-				cout << "LEFT" << endl;
+				now[1][0] -= 1;
 				break;
 			case RIGHT:
-				cout << "RIGHT" << endl;
+				now[1][0] += 1;
 				break;
 			}
 		}
-
-		//움직이는거 구현
+		now[0][0] = now[1][0], now[0][1] = now[1][1];
+		gotoxy(now[1][0], now[1][1]);
+		cout << "■";
+		
+		Sleep(100);
+		gotoxy(now[0][0], now[0][1]);
+		cout << "  ";
 	}
 }
 
